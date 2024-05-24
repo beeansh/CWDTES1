@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overlapping Semi-Arcs</title>
+<style>
+    #canvas-container {
+        border: 2px solid black;
+        display: inline-block;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<div id="canvas-container">
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+</div>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    
+    ctx.translate(0, canvas.height);
+    ctx.scale(1, -1);
+
+    var centerX1 = canvas.width / 2;
+    var centerY1 = canvas.height;
+    var radius1 = 100;
+
+    var startAngle1 = Math.PI;
+    var endAngle1 = 2 * Math.PI;
+
+    var centerX2 = canvas.width / 2;
+    var centerY2 = canvas.height -10;
+    var radius2 = 75;
+
+    var startAngle2 = Math.PI;
+    var endAngle2 = 2 * Math.PI;
+
+    var fillColor1 = 'LightGreen';
+    var borderColor1 = 'LightGreen';
+    var borderWidth1 = 2;
+
+    var fillColor2 = 'red';
+    var borderColor2 = 'red';
+    var borderWidth2 = 7;
+
+    ctx.beginPath();
+    ctx.arc(centerX1, centerY1, radius1, startAngle1, endAngle1);
+    
+    ctx.fillStyle = fillColor1;
+    ctx.fill();
+
+    ctx.strokeStyle = borderColor1;
+    ctx.lineWidth = borderWidth1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(centerX2, centerY2, radius2, startAngle2, endAngle2);
+
+    ctx.fillStyle = fillColor2;
+    ctx.fill();
+
+    ctx.strokeStyle = borderColor2;
+    ctx.lineWidth = borderWidth2;
+    ctx.stroke();
+</script>
+</body>
+</html>

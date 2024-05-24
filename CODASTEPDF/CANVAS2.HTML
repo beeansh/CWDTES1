@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVERLAPPING SEMI ARC</title>
+<style>
+    #canvas-container {
+        border: 3px solid black;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transform: rotateX(180deg); /* Rotate the canvas container 180 degrees to make it look upward */
+    }
+</style>
+</head>
+<body>
+<div id="canvas-container">
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+</div>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    var centerX1 = canvas.width / 2;
+    var centerY1 = canvas.height;
+    var radius1 = 140;
+
+    var startAngle1 = Math.PI;
+    var endAngle1 = 2 * Math.PI;
+
+    var centerX2 = canvas.width / 2;
+    var centerY2 = canvas.height /1.1;
+    var radius2 = 105;
+
+    var startAngle2 = Math.PI;
+    var endAngle2 = 2 * Math.PI;
+
+    var fillColor1 = 'yellowgreen';
+    var borderColor1 = 'black';
+    var borderWidth1 = 1;
+    ctx.globalAlpha = 0.8;
+
+    var fillColor2 = 'red';
+    var borderColor2 = 'white';
+    var borderWidth2 = 5;
+
+    ctx.beginPath();
+    ctx.arc(centerX1, centerY1, radius1, startAngle1, endAngle1);
+    ctx.fillStyle = fillColor1;
+    ctx.fill();
+    ctx.strokeStyle = borderColor1;
+    ctx.lineWidth = borderWidth1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(centerX2, centerY2, radius2, startAngle2, endAngle2);
+    ctx.fillStyle = fillColor2;
+    ctx.fill();
+</script>
+</body>
+</html>
